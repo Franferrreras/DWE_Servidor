@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/bootstrap::head(title='grados')"></head>
+<body>
+	<div class="container mt-5">
+		<div class="row mt-5 justify-content-center">
+			<header th:insert="fragments/parts::menu"></header>	
+			<div class="row mt-4 mb-4">
+				<button sec:authorize="hasRole('ROLE_ADMIN')" type="button" class="btn btn-primary col-3">
+					<a th:href="@{/grados/addGrado}" th:text="AnadirGrado" style-color="white"></a>
+				</button>		
+			</div>
+			<div class="col-8">
+				<table class="table table-stripped table-hover">
+					<thead class="table-light">
+					<tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Asignaturas</th>
+					</tr>
+					</thead>					
+					<tbody>
+					 <tr th:each="g:${grados}">
+					 	<td th:text="${g.getId()}"></td>
+					 	<td th:text="${g.getNombre()}"></td>
+					 	<td><a th:href="@{'/grados/asignaturas?codigo='+${g.getId()}}"><i class="bi bi-eye-fill"></i></a></td>
+					 </tr>	
+					 <tr th:text="${error}"></tr>				
+					</tbody>
+				</table>
+			</div>
+			<div class="row mt-4">
+				<button sec:authorize="hasRole('ROLE_ADMIN')" type="button" class="btn btn-primary col-3">Añadir Grado</button>		
+			</div>
+		</div>
+	</div>
+</body>
+</html>

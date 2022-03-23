@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+thead {
+	color: #eeeeec;
+	background-color: #02060e;
+}
+th {
+	padding: 20px;
+	background-color: #204a87;
+}
+
+.container {
+	width: 100%;
+	margin: 0px auto;
+}
+
+table {
+	margin: 0px auto;
+}
+
+td {
+	padding: 20px;
+	margin: 5px;
+	color: white;
+	font-weight: bolder;
+	text-align: center;
+}
+
+tr:nth-child(2n) {
+	background-color: #344b4b;
+}
+
+tr:nth-child(2n-1) {
+	background-color: #888a85;
+} 

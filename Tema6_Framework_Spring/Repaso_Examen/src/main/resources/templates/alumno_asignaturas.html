@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/bootstrap::head(title='Alumno Asignaturas')"></head>
+<body>
+	<div class="container mt-5">
+		<div class="row mt-5 justify-content-center">
+			<header th:insert="fragments/parts::menu"></header>	
+			<div class="row mt-4 mb-4">
+			</div>
+			<div class="col-8">
+				<table class="table table-stripped table-hover">
+					<thead class="table-light">
+					<tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Creditos</th>
+						<th>Tipo</th>
+						<th>Curso</th>
+						<th>Cuatrimestre</th>
+						<th>Profesor</th>
+					</tr>
+					</thead>					
+					<tbody>
+					 <tr th:each="a:${alumno.getAlumnoAsignaturas()}">
+					 	<td th:text="${a.getAsignatura().id}"></td>
+					 	<td th:text="${a.getAsignatura().nombre}"></td>
+					 	<td th:text="${a.getAsignatura().creditos}"></td>
+					 	<td th:text="${a.getAsignatura().tipo}"></td>
+					 	<td th:text="${a.getAsignatura().curso}"></td>
+					 	<td th:text="${a.getAsignatura().cuatrimestre}"></td>
+					 	<td th:text="(${a.getAsignatura().profesor}!=null)?|${a.getAsignatura().profesor.nombre}${a.getAsignatura().profesor.apellido1}${a.getAsignatura().profesor.apellido2}|:'Sin asignar'"></td>
+					 </tr>			
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

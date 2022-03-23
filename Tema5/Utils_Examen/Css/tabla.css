@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+*{
+	box-sizing: border-box;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0px auto;
+}
+
+.tabla {
+	width: 60%;
+	margin: 0px auto;
+}
+
+thead tr {
+	background-color: #3971ff;
+	color: white;
+}
+
+td {
+	padding: 10px;
+}

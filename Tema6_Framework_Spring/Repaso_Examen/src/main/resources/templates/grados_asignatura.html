@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/bootstrap::head(title='Grados Asignatura')"></head>
+<body>
+	<div class="container mt-5">
+		<div class="row mt-5 justify-content-center">
+			<header th:insert="fragments/parts::menu"></header>	
+			<div class="row mt-4 mb-4">
+			</div>
+			<div class="col-8">
+				<table class="table table-stripped table-hover">
+					<thead class="table-light">
+					<tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Creditos</th>
+						<th>Tipo</th>
+						<th>Curso</th>
+						<th>Cuatrimestre</th>
+						<th>Profesor</th>
+					</tr>
+					</thead>					
+					<tbody>
+					 <tr th:if="${asignaturas.getAsignaturas().size() > 0}" th:each="a:${asignaturas.getAsignaturas()}">
+					 	<td th:text="${a.getId()}"></td>
+					 	<td th:text="${a.getNombre()}"></td>
+					 	<td th:text="${a.getCreditos()}"></td>
+					 	<td th:text="${a.getTipo()}"></td>
+					 	<td th:text="${a.getCurso()}"></td>
+					 	<td th:text="${a.getCuatrimestre()}"></td>
+					 	<td th:text="(${a.profesor}!=null)?|${a.profesor.nombre}${a.profesor.apellido1}${a.profesor.apellido2}|:'Sin asignar'"></td>
+					 </tr>			
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

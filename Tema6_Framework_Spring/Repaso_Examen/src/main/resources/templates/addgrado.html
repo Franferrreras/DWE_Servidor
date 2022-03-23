@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/bootstrap::head(title='Add Subject')"></head>
+<body>
+	<div class="container mt-5">
+		<div class="row mt-5 justify-content-center">
+			<header th:insert="fragments/parts::menu"></header>
+			<div class="col-6">
+				<form th:action="@{/grados/addGrado}" method="post" th:object="${grado}">
+					<div class="form-group">
+						<label for="grado" class="form-label mt-3" th:text="Grado"></label> 
+						<input type="text" id="grado" name="grado" th:field="*{nombre}">							
+					</div>
+					<input type="submit" class="btn btn-primary w-100 mt-3" value="AÑADIR" />	
+				</form>
+				<div th:text="${error}" class="text-danger"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

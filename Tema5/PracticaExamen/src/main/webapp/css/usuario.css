@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+
+.container {
+	width: 100%;
+	margin: 0px auto;
+	
+}
+
+.menu {
+	background-color: #3971ff;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	height: 50px;
+	align-items: flex-end;
+}
+
+
+.box1 {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 40%
+}
+
+.box2 {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 40%
+}
+
+
+.box1 div, .box2 div {
+	padding: 5px;
+	margin: 5px;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.box1 div:hover , .box2 div:hover{
+	background-color: #d7d7d7;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/bootstrap::head(title='Add Subject')"></head>
+<body>
+	<div class="container mt-5">
+		<div class="row mt-5 justify-content-center">
+			<header th:insert="fragments/parts::menu"></header>
+			<div class="col-6">
+				<form th:action="@{/profesores/addAsignatura}" method="post" th:object="${proDTO}">
+					<div class="form-group">
+						<label for="asignatura" class="form-label mt-3" th:text="Asignaturas"></label> 
+						<select class="form-select" name="asignatura" th:field="*{idAsignatura}">
+							<option th:each="a : ${asignaturas}" th:value="${a.id}" th:text="${a.nombre}" />
+						</select>	
+					</div>
+					<div class="form-group">
+						<label for="docente" class="form-label mt-3" th:text="Docentes"></label> 
+						<select class="form-select" name="docente" th:field="*{idProfesor}">
+							<option th:each="g : ${profesores}" th:text="${g.nombre}" th:value="${g.id}"/>
+						</select>	
+					</div>
+				<input type="submit" class="btn btn-primary w-100 mt-3" value="Asignar" />	
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

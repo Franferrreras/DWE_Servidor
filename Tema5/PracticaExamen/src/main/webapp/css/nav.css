@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+nav {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	background-color: #3971ff;
+	align-items:flex-end;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+
+.box1, .box2 {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.box1 div, .box2 div {
+	padding: 5px;
+	margin: 5px;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.box1 div:hover , .box2 div:hover{
+	background-color: #d7d7d7;
+}
